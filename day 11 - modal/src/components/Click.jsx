@@ -8,12 +8,19 @@ const Click = () => {
   return (
     <div ref={ref} className="flex flex-col justify-center items-center">
       {showContent ? (
-        <div className="text-center">
+        <div className="relative text-center border border-black px-8 py-10 rounded-lg">
+          <span
+            className="absolute top-0 right-3 cursor-pointer text-xl font-semibold"
+            onClick={() => setShowContent(false)}
+          >
+            &times;
+          </span>
           <h1 className="text-2xl font-semibold">
-            This Is The Custom Click Hook
+            This Is a Custom Modal Popup
           </h1>
-          <p className="text-lg">
-            Click anywhere outside of thix text to close it.
+          <p className="text-lg pt-4">
+            Click anywhere outside of this box, or the close button to hide this
+            window.
           </p>
         </div>
       ) : (
